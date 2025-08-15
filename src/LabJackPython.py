@@ -1346,7 +1346,7 @@ def _openUE9OverEthernet(firstFound, pAddress, devNumber):
     outBuff = ""
     for item in sndDataBuff:
         outBuff += chr(item)
-    s.sendto(outBuff, ("255.255.255.255", 52362))
+    s.sendto(outBuff.encode('utf-8'), ("255.255.255.255", 52362))
 
     try:
         count = 1
